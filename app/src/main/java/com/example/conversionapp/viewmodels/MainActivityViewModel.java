@@ -70,21 +70,21 @@ public class MainActivityViewModel extends AndroidViewModel {
     }
 
     public void convert(float userAmount, String from, String to){
-        float medianFrom = 0,medianTo = 0;
+        float buyingCurrency = 0,sellingCurrency = 0;
         amount = userAmount;
         if(allCurrencies.getValue() != null) {
             for (Currency currency : allCurrencies.getValue()) {
                 if (currency.getCurrencyCode().equals(from)) {
-                    float median = currency.getMedianRate() / currency.getUnitValue();
-                    medianFrom = 1 / median;
+                    float buyingOne = currency.getBuyingRate() / currency.getUnitValue();
+                    buyingCurrency = 1 / buyingOne;
                 }
                 if (currency.getCurrencyCode().equals(to)) {
-                    float median = currency.getMedianRate() / currency.getUnitValue();
-                    medianTo = 1 / median;
+                    float sellingOne = currency.getMedianRate() / currency.getUnitValue();
+                    sellingCurrency = 1 / sellingOne;
                 }
             }
         }
-        float calculatedValue = medianTo/medianFrom;
+        float calculatedValue = sellingCurrency/buyingCurrency;
         amountExchanged.setValue(String.valueOf(amount*calculatedValue));
         exchangeRate.setValue(String.valueOf(calculatedValue));
     }

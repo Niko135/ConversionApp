@@ -26,6 +26,14 @@ public class Currency {
         return medianRate;
     }
 
+    public float getBuyingRate() {
+        return buyingRate;
+    }
+
+    public float getSellingRate() {
+        return sellingRate;
+    }
+
     @Override
     public String toString(){
         return currencyCode;
