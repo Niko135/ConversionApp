@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ConversionApp</string>
+    <string name="submit">Submit</string>
+    <string name="resultHint">Exchange rate will display here..</string>
+    <string name="amount">Amount to exchange</string>
+    <string name="amountExchanged">Amount Exchanged</string>
+    <string name="swapCurrencies">Swap</string>
+</resources>
